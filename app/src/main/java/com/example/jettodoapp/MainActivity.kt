@@ -33,9 +33,11 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainContent() {
-    Scaffold(floatingActionButton = ) {
+    Scaffold(floatingActionButton = {
         FloatingActionButton(onClick = { /*TODO*/ }) {
             Icon(imageVector = Icons.Default.Add, contentDescription = "新規作成")
         }
+    }) {
+
     }
 }
