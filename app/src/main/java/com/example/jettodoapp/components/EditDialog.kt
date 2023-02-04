@@ -9,11 +9,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.jettodoapp.MainViewModel
 import org.w3c.dom.Text
 
 
 @Composable
 fun EditDialog(isShowDialog: MutableState<Boolean>) {
+    val viewModel = hiltViewModel<MainViewModel>()
+
     AlertDialog(
         onDismissRequest = { isShowDialog.value = false },
         title = { Text(text= "Task新規作成") },
