@@ -24,9 +24,15 @@ fun EditDialog(isShowDialog: MutableState<Boolean>) {
         text = {
             Column {
                 Text(text = "タイトル")
-                TextField(value = "", onValueChange = { /* Todo */ })
+                TextField(
+                    value = viewModel.title,
+                    onValueChange = { viewModel.title = it }
+                )
                 Text(text = "詳細")
-                TextField(value = "", onValueChange = { /* Todo */ })
+                TextField(
+                    value = viewModel.description,
+                    onValueChange = { viewModel.description = it }
+                )
             }
         },
         buttons = {
