@@ -52,7 +52,7 @@ fun EditDialog(isShowDialog: MutableState<Boolean>) {
                     modifier = Modifier.width(120.dp),
                     onClick = {
                         isShowDialog.value = false
-                        /* Todo */
+                        viewModel.createTask()
                     },
                 ) {
                     Text(text = "OK")
