@@ -19,7 +19,7 @@ fun EditDialog(isShowDialog: MutableState<Boolean>) {
     val viewModel = hiltViewModel<MainViewModel>()
 
     AlertDialog(
-        onDismissRequest = { isShowDialog.value = false },
+        onDismissRequest = { viewModel.isShowDialog = false },
         title = { Text(text= "Task新規作成") },
         text = {
             Column {
@@ -43,7 +43,7 @@ fun EditDialog(isShowDialog: MutableState<Boolean>) {
                 Spacer(modifier = Modifier.weight(1f))
                 Button(
                     modifier = Modifier.width(120.dp),
-                    onClick = { isShowDialog.value = false},
+                    onClick = { viewModel.isShowDialog = false},
                 ) {
                     Text(text = "キャンセル")
                 }
@@ -51,7 +51,7 @@ fun EditDialog(isShowDialog: MutableState<Boolean>) {
                 Button(
                     modifier = Modifier.width(120.dp),
                     onClick = {
-                        isShowDialog.value = false
+                        viewModel.isShowDialog = false
                         viewModel.createTask()
                     },
                 ) {
