@@ -15,7 +15,7 @@ import org.w3c.dom.Text
 
 
 @Composable
-fun EditDialog(isShowDialog: MutableState<Boolean>) {
+fun EditDialog() {
     val viewModel = hiltViewModel<MainViewModel>()
 
     AlertDialog(

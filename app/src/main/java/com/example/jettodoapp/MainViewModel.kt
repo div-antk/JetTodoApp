@@ -14,11 +14,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(private val taskDao: TaskDao) : ViewModel() {
+    var isShowDialog by mutableStateOf(false)
 
     var title by mutableStateOf("")
     var description by mutableStateOf("")
-    var isShowDialog by mutableStateOf(false)
-    var tasks = taskDao.loadAllTasks().distinctUntilChanged()
+
+    val tasks = taskDao.loadAllTasks().distinctUntilChanged()
 
     fun createTask() {
         viewModelScope.launch {
