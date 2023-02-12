@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -52,6 +53,6 @@ fun MainContent() {
         }
     }) {
         val tasks by viewModel.tasks.collectAsState(initial = emptyList())
-//        Log.d("COUNT", tasks.size.to)
+        Log.d("COUNT", tasks.size.toString())
     }
 }
