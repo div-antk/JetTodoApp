@@ -18,6 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.jettodoapp.components.EditDialog
+import com.example.jettodoapp.components.TaskList
 import com.example.jettodoapp.ui.theme.JetTodoAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -53,6 +54,13 @@ fun MainContent() {
         }
     }) {
         val tasks by viewModel.tasks.collectAsState(initial = emptyList())
+
+        TaskList(
+            tasks = tasks,
+            onClickRow = {},
+            onCLickDelete = {}
+        )
+
         Log.d("COUNT", tasks.size.toString())
     }
 }

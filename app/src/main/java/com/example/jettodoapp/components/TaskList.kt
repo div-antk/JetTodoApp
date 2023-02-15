@@ -1,6 +1,7 @@
 package com.example.jettodoapp.components
 
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.room.Delete
 import com.example.jettodoapp.Task
