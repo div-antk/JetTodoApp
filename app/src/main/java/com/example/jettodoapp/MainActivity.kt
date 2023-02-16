@@ -58,7 +58,7 @@ fun MainContent() {
         TaskList(
             tasks = tasks,
             onClickRow = {},
-            onCLickDelete = {}
+            onCLickDelete = { viewModel.deleteTask(it) }
         )
 
         Log.d("COUNT", tasks.size.toString())
