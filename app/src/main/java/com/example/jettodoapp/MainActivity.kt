@@ -57,7 +57,10 @@ fun MainContent() {
 
         TaskList(
             tasks = tasks,
-            onClickRow = {},
+            onClickRow = {
+                viewModel.setEditingTask(it)
+                viewModel.isShowDialog = true
+            },
             onCLickDelete = { viewModel.deleteTask(it) }
         )
 
