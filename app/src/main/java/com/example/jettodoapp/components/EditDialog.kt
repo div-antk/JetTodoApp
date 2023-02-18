@@ -20,7 +20,7 @@ fun EditDialog() {
 
     AlertDialog(
         onDismissRequest = { viewModel.isShowDialog = false },
-        title = { Text(text= "Task新規作成") },
+        title = { Text(text= if (viewModel.isEditing) "Task更新" else "Task新規作成") },
         text = {
             Column {
                 Text(text = "タイトル")
@@ -52,7 +52,11 @@ fun EditDialog() {
                     modifier = Modifier.width(120.dp),
                     onClick = {
                         viewModel.isShowDialog = false
-                        viewModel.createTask()
+                        if (viewModel.isEditing) {
+                            viewModel.updateTask()
+                        } else {
+                            viewModel.createTask()
+                        }
                     },
                 ) {
                     Text(text = "OK")
