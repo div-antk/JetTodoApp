@@ -54,4 +54,10 @@ class MainViewModel @Inject constructor(private val taskDao: TaskDao) : ViewMode
             taskDao.deleteTask(task)
         }
     }
+
+    fun resetProperties() {
+        editingTask = null
+        title = ""
+        description = ""
+    }
 }
