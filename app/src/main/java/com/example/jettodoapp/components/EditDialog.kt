@@ -6,6 +6,7 @@ import androidx.compose.material.Button
 import androidx.compose.material.TextField
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -17,6 +18,12 @@ import org.w3c.dom.Text
 @Composable
 fun EditDialog() {
     val viewModel = hiltViewModel<MainViewModel>()
+
+    DisposableEffect(Unit) {
+        onDispose {
+            viewModel.resetProperties()
+        }
+    }
 
     AlertDialog(
         onDismissRequest = { viewModel.isShowDialog = false },
